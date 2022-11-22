@@ -25,5 +25,10 @@ namespace LibreriaVaxi
 
             return nombreRetorno;
         }
+
+        public double SumarDecimal(double decimal1, double decimal2)
+        {
+            return decimal1 + decimal2;
+        }
     }
 }

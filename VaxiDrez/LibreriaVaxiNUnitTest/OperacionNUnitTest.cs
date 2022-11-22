@@ -10,7 +10,7 @@ namespace LibreriaVaxi
     [TestFixture]
     public class OperacionNUnitTest
     {
-        // Clase 2
+        #region Clase 2
         [Test]
         public void SumaNumeros_InputDosNumero_GetValorCorrecto()
         {
@@ -42,9 +42,11 @@ namespace LibreriaVaxi
             //Assert
             Assert.AreEqual(119, resultado);
         }
-        // Clase 3
+        #endregion
+        #region Clase 3
+
         [Test]
-        public void IsValorPar_IputNumeroImPar_ReturnFalse() 
+        public void IsValorPar_IputNumeroImPar_ReturnFalse()
         {
             #region Firma
             /* 
@@ -65,17 +67,17 @@ namespace LibreriaVaxi
             //Arrange
             int valorPar = 3;
             Operaciones op = new();
-            
+
             //action
             bool resultado = op.IsValorPar(valorPar);
-            
+
             //asset
             //Assert.IsFalse(resultado);
             Assert.That(resultado, Is.EqualTo(resultado));
 
         }
         [Test]
-        public void IsValorPar_InputNumeroPar_ReturnTrue() 
+        public void IsValorPar_InputNumeroPar_ReturnTrue()
         {
             #region Firma
             /* 
@@ -135,12 +137,12 @@ namespace LibreriaVaxi
 
         }
         #endregion
-        #region Metodos que retonan valor
+        #region Metodos que retonan valor - ExpectedResult
         [Test]
         [TestCase(3, ExpectedResult = false)]
-        [TestCase(5, ExpectedResult = true)]
-        [TestCase(7, ExpectedResult = false)]        
-        public bool IsValorPar_InputNumero_ReturnFalse(int numero) 
+        [TestCase(5, ExpectedResult = false)]
+        [TestCase(7, ExpectedResult = false)]
+        public bool IsValorPar_InputNumero_ReturnFalse(int numero)
         {
             #region Firma
             /* 
@@ -156,14 +158,45 @@ namespace LibreriaVaxi
              */
             #endregion
             //Arrange
-            Operaciones op = new ();
+            Operaciones op = new();
 
             //Action
             return op.IsValorPar(numero);
-            
+
             //Aseet
         }
         #endregion
 
+        #region Operaciones con decimales
+        [Test]
+        [TestCase(2.5,2.54)]
+        public void SumarDecimal_InputDosNumeros_GetValorCorrecto(double decima1, double decimal2) 
+        {
+            #region Firma
+            /* 
+             * =============================================
+             *  Author:          Enderson Florian Solan
+             *  Author modified: null
+             *  Create date:     11/22/2022
+             *  Tester:          null
+             *  Description:
+             *     Metodo que suma sumeros de coma 
+             *     flotantes, (2.5 + 2.5 = 5)
+             * =============================================
+             */
+            #endregion
+            //Arrange
+            Operaciones op = new ();
+
+            //Action
+            var result = op.SumarDecimal(decima1, decimal2);
+            
+            //Asset
+            Assert.AreEqual(5, result);
+
+        }
+        #endregion
+
+        #endregion
     }
 }
