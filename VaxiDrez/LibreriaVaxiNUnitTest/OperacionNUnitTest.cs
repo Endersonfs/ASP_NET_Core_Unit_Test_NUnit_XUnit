@@ -101,5 +101,37 @@ namespace LibreriaVaxi
             //Assert
             Assert.IsTrue(resultado);
         }
+        //metodos con parametros
+        [Test]
+        [TestCase("Enderson")]
+        [TestCase("Marco")]
+        [TestCase("Jose")]
+        //[TestCase("Jose","Paul")]
+        public void IsDeveloperOfPhoenix_InputNombre_ReturnTrue(string nombreDevelper) 
+        {
+
+            #region Firma
+            /* 
+             * =============================================
+             *  Author:          Enderson Florian Solan
+             *  Author modified: null
+             *  Create date:     11/22/2022
+             *  Tester:          null
+             *  Description:
+             *      Metodo que identifica si es un programador
+             *      dentro de la empresa, si existe pues retorna 
+             *      verdadero.
+             * =============================================
+             */
+            #endregion
+
+            //Arrage
+            Operaciones op = new();
+            //Act
+            var resultado = op.IsDeveloperOfPhoenix(nombreDevelper);
+            //Asset
+            Assert.IsTrue(resultado);
+
+        }
     }
 }
