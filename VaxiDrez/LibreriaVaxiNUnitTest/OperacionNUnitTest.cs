@@ -101,13 +101,14 @@ namespace LibreriaVaxi
             //Assert
             Assert.IsTrue(resultado);
         }
-        //metodos con parametros
+
+        #region metodos con parametros
         [Test]
         [TestCase("Enderson")]
         [TestCase("Marco")]
         [TestCase("Jose")]
         //[TestCase("Jose","Paul")]
-        public void IsDeveloperOfPhoenix_InputNombre_ReturnTrue(string nombreDevelper) 
+        public void IsDeveloperOfPhoenix_InputNombre_ReturnTrue(string nombreDevelper)
         {
 
             #region Firma
@@ -133,5 +134,36 @@ namespace LibreriaVaxi
             Assert.IsTrue(resultado);
 
         }
+        #endregion
+        #region Metodos que retonan valor
+        [Test]
+        [TestCase(3, ExpectedResult = false)]
+        [TestCase(5, ExpectedResult = true)]
+        [TestCase(7, ExpectedResult = false)]        
+        public bool IsValorPar_InputNumero_ReturnFalse(int numero) 
+        {
+            #region Firma
+            /* 
+             * =============================================
+             *  Author:          Enderson Florian Solan
+             *  Author modified: null
+             *  Create date:     11/22/2022
+             *  Tester:          null
+             *  Description:
+             *      Metodo para validar si el numero es 
+             *      par o  impar.
+             * =============================================
+             */
+            #endregion
+            //Arrange
+            Operaciones op = new ();
+
+            //Action
+            return op.IsValorPar(numero);
+            
+            //Aseet
+        }
+        #endregion
+
     }
 }
