@@ -4,6 +4,9 @@ namespace LibreriaVaxi
 {
     public class Operaciones
     {
+        //variables  necesarias
+        public List<int> NumeroImpares = new List<int>();
+
         public int SumaNumero(int numero1, int numero2) 
         {
             return numero1 + numero2;
@@ -29,6 +32,23 @@ namespace LibreriaVaxi
         public double SumarDecimal(double decimal1, double decimal2)
         {
             return decimal1 + decimal2;
+        }
+
+        public List<int> GetListaNumeroImpares(int intervaloMinimo, int intervaloMaximo) 
+        {
+            //limpiando lista
+            NumeroImpares.Clear();
+
+            //Almacenando numero impares
+            for(int i = intervaloMinimo; i<= intervaloMaximo; i++) 
+            {
+                if (i % 2 != 0)
+                {
+                    NumeroImpares.Add(i);
+                }                
+            }            
+
+            return NumeroImpares;
         }
     }
 }

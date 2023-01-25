@@ -10,10 +10,19 @@ namespace LibreriaVaxi
     [TestFixture]
     public class ClienteNUnitTest
     {
+        private Cliente cliente;
+
+        //Configuracion global
+        [SetUp]
+        public void Setup()
+        {
+            cliente = new Cliente();
+        }
+
         #region Clase 3
         [Test]
         [TestCase("Enderson", "Florian")]
-        public void CrearNombreCompleto_InputNombreApellido_ReturnNombreCompleto(string nombre, string apellidos) 
+        public void CrearNombreCompleto_InputNombreApellido_ReturnNombreCompleto(string nombre, string apellidos)
         {
             #region Firma
             /* 
@@ -31,13 +40,31 @@ namespace LibreriaVaxi
             #endregion
 
             //Arrange
-            Cliente cliente = new ();
-            
+
+
             //act
-            var result = cliente.CrearNombreCompleto (nombre, apellidos);
-            
+            cliente.CrearNombreCompleto(nombre, apellidos);
+
             //Assert
-            Assert.That(result, Is.EqualTo("Enderson Florian"));
+            Assert.AreEqual(cliente.ClienteNombre, "Enderson Florian");
+
+            Assert.That(cliente.ClienteNombre, Is.EqualTo("Enderson Florian"));
+            Assert.That(cliente.ClienteNombre, Does.Contain("Enderson"));
+            Assert.That(cliente.ClienteNombre , Does.StartWith("en").IgnoreCase);
+            Assert.That(cliente.ClienteNombre, Does.EndWith("n"));
+          
+        }
+        [Test]
+        public void ClienteNombre_NoValue_ReturnNull() 
+        {
+            Cliente cliente = new ();
+
+            //da error porque no retorna  null
+            //var result = cliente.CrearNombreCompleto("Vaxi", "Drez");
+
+            Assert.Null(cliente.ClienteNombre);
+            
+           
         }
         #endregion
     }

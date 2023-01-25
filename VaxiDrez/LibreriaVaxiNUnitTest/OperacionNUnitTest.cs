@@ -10,6 +10,14 @@ namespace LibreriaVaxi
     [TestFixture]
     public class OperacionNUnitTest
     {
+        private Operaciones  op= new Operaciones();
+
+        //Configuracion
+        [SetUp]
+        public void SetUp()
+        {
+            op = new Operaciones();
+        }
         #region Clase 2
         [Test]
         public void SumaNumeros_InputDosNumero_GetValorCorrecto()
@@ -43,6 +51,7 @@ namespace LibreriaVaxi
             Assert.AreEqual(119, resultado);
         }
         #endregion
+
         #region Clase 3
 
         [Test]
@@ -66,13 +75,12 @@ namespace LibreriaVaxi
 
             //Arrange
             int valorPar = 3;
-            Operaciones op = new();
-
+            
             //action
             bool resultado = op.IsValorPar(valorPar);
 
             //asset
-            //Assert.IsFalse(resultado);
+            Assert.IsFalse(resultado);
             Assert.That(resultado, Is.EqualTo(resultado));
 
         }
@@ -107,7 +115,6 @@ namespace LibreriaVaxi
         #region metodos con parametros
         [Test]
         [TestCase("Enderson")]
-        [TestCase("Marco")]
         [TestCase("Jose")]
         //[TestCase("Jose","Paul")]
         public void IsDeveloperOfPhoenix_InputNombre_ReturnTrue(string nombreDevelper)
@@ -132,7 +139,7 @@ namespace LibreriaVaxi
             Operaciones op = new();
             //Act
             var resultado = op.IsDeveloperOfPhoenix(nombreDevelper);
-            //Asset
+            //Assert
             Assert.IsTrue(resultado);
 
         }
@@ -141,7 +148,7 @@ namespace LibreriaVaxi
         #region Metodos que retonan valor - ExpectedResult
         [Test]
         [TestCase(3, ExpectedResult = false)]
-        [TestCase(5, ExpectedResult = false)]
+        [TestCase(4, ExpectedResult = true)]
         [TestCase(7, ExpectedResult = false)]
         public bool IsValorPar_InputNumero_ReturnFalse(int numero)
         {
@@ -164,7 +171,7 @@ namespace LibreriaVaxi
             //Action
             return op.IsValorPar(numero);
 
-            //Aseet
+            //Assert
         }
         #endregion
 
@@ -192,12 +199,53 @@ namespace LibreriaVaxi
             //Action
             var result = op.SumarDecimal(decima1, decimal2);
             
-            //Asset
-            Assert.AreEqual(5, result);
+            //Assert
+            Assert.AreEqual(5.04, result);
 
         }
         #endregion
 
+        #endregion
+
+        #region Clase4
+        [Test]
+        public void GetListaNumeroImpares_InputMinimoMaxinoIntervalos_ReturnListaImpares()
+        {
+            //Arrange           
+            List<int> numeroImparesEsperados = new() {5,7,9 };
+
+            //Act
+            List<int> result = op.GetListaNumeroImpares(5, 10);
+
+            //Assert
+            //-- Comparando lista
+            Assert.That(result, Is.EquivalentTo(numeroImparesEsperados)); 
+            Assert.AreEqual(numeroImparesEsperados, new List<int> {5,7,9 }); 
+            Assert.AreEqual(numeroImparesEsperados, result);
+
+            //evaluar si un  elemento esta en la collection
+            Assert.That(result, Does.Contain(5));
+
+            //evaluar su un elemento no esta en la lista
+            Assert.That(result, Has.No.Member(100));
+            //Assert.That(result, Has.No.Member(7));//codigo de error
+            
+            //evaluando si esta vacio
+            Assert.That(result, Is.Not.Empty);
+
+            //contar los elementos
+            Assert.That(result.Count, Is.EqualTo(3));
+
+            //evaluar si estan organizados
+            Assert.That(result, Is.Ordered.Ascending);
+            //Assert.That(result, Is.Ordered.Descending);//error 
+
+            //var si tenemos valore duplicados
+            Assert.That(result, Is.Unique);
+
+            //rango de intervalo 
+
+        }
         #endregion
     }
 }

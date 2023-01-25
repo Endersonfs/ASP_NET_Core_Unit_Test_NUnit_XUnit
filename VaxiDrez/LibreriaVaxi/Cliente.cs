@@ -8,9 +8,14 @@ namespace LibreriaVaxi
 {
     public class Cliente
     {
+        public string ClienteNombre { get; set; }
+        public int Descuento = 10;
+        
         public string CrearNombreCompleto(string nombre, string apelldo) 
         {
-            return $"{nombre} {apelldo}";
+            Descuento = 30;
+            ClienteNombre = $"{nombre} {apelldo}";
+            return ClienteNombre;
         }
     }
 }
