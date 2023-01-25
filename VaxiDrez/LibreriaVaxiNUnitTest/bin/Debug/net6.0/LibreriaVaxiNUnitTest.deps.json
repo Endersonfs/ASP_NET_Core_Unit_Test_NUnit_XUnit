@@ -9,15 +9,27 @@
       "LibreriaVaxiNUnitTest/1.0.0": {
         "dependencies": {
           "LibreriaVaxi": "1.0.0",
-          "Microsoft.NET.Test.Sdk": "17.4.0",
+          "Microsoft.NET.Test.Sdk": "17.4.1",
+          "Moq": "4.18.4",
           "NUnit": "3.13.3",
-          "NUnit3TestAdapter": "4.3.0"
+          "NUnit3TestAdapter": "4.3.1"
         },
         "runtime": {
           "LibreriaVaxiNUnitTest.dll": {}
         }
       },
-      "Microsoft.CodeCoverage/17.4.0": {
+      "Castle.Core/5.1.1": {
+        "dependencies": {
+          "System.Diagnostics.EventLog": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Castle.Core.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.1.1.0"
+          }
+        }
+      },
+      "Microsoft.CodeCoverage/17.4.1": {
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
             "assemblyVersion": "15.0.0.0",
@@ -25,14 +37,14 @@
           }
         }
       },
-      "Microsoft.NET.Test.Sdk/17.4.0": {
+      "Microsoft.NET.Test.Sdk/17.4.1": {
         "dependencies": {
-          "Microsoft.CodeCoverage": "17.4.0",
-          "Microsoft.TestPlatform.TestHost": "17.4.0"
+          "Microsoft.CodeCoverage": "17.4.1",
+          "Microsoft.TestPlatform.TestHost": "17.4.1"
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
-      "Microsoft.TestPlatform.ObjectModel/17.4.0": {
+      "Microsoft.TestPlatform.ObjectModel/17.4.1": {
         "dependencies": {
           "NuGet.Frameworks": "5.11.0",
           "System.Reflection.Metadata": "1.6.0"
@@ -132,9 +144,9 @@
           }
         }
       },
-      "Microsoft.TestPlatform.TestHost/17.4.0": {
+      "Microsoft.TestPlatform.TestHost/17.4.1": {
         "dependencies": {
-          "Microsoft.TestPlatform.ObjectModel": "17.4.0",
+          "Microsoft.TestPlatform.ObjectModel": "17.4.1",
           "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
@@ -279,6 +291,17 @@
           }
         }
       },
+      "Moq/4.18.4": {
+        "dependencies": {
+          "Castle.Core": "5.1.1"
+        },
+        "runtime": {
+          "lib/net6.0/Moq.dll": {
+            "assemblyVersion": "4.18.0.0",
+            "fileVersion": "4.18.4.0"
+          }
+        }
+      },
       "NETStandard.Library/2.0.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -311,7 +334,29 @@
           }
         }
       },
-      "NUnit3TestAdapter/4.3.0": {},
+      "NUnit3TestAdapter/4.3.1": {},
+      "System.Diagnostics.EventLog/6.0.0": {
+        "runtime": {
+          "lib/net6.0/System.Diagnostics.EventLog.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
       "System.Reflection.Metadata/1.6.0": {},
       "LibreriaVaxi/1.0.0": {
         "runtime": {
@@ -326,19 +371,26 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.CodeCoverage/17.4.0": {
+    "Castle.Core/5.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2oZbSVTC2nAvQ2DnbXLlXS+c25ZyZdWeNd+znWwAxwGaPh9dwQ5NBsYyqQB7sKmJKIUdkKGmN3rzFzjVC81Dtg==",
-      "path": "microsoft.codecoverage/17.4.0",
-      "hashPath": "microsoft.codecoverage.17.4.0.nupkg.sha512"
+      "sha512": "sha512-rpYtIczkzGpf+EkZgDr9CClTdemhsrwA/W5hMoPjLkRFnXzH44zDLoovXeKtmxb1ykXK9aJVODSpiJml8CTw2g==",
+      "path": "castle.core/5.1.1",
+      "hashPath": "castle.core.5.1.1.nupkg.sha512"
     },
-    "Microsoft.NET.Test.Sdk/17.4.0": {
+    "Microsoft.CodeCoverage/17.4.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VtNZQ83ntG2aEUjy1gq6B4HNdn96se6FmdY/03At8WiqDReGrApm6OB2fNiSHz9D6IIEtWtNZ2FSH0RJDVXl/w==",
-      "path": "microsoft.net.test.sdk/17.4.0",
-      "hashPath": "microsoft.net.test.sdk.17.4.0.nupkg.sha512"
+      "sha512": "sha512-T21KxaiFawbrrjm0uXjxAStXaBm5P9H6Nnf8BUtBTvIpd8q57lrChVBCY2dnazmSu9/kuX4z5+kAOT78Dod7vA==",
+      "path": "microsoft.codecoverage/17.4.1",
+      "hashPath": "microsoft.codecoverage.17.4.1.nupkg.sha512"
+    },
+    "Microsoft.NET.Test.Sdk/17.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kJ5/v2ad+VEg1fL8UH18nD71Eu+Fq6dM4RKBVqlV2MLSEK/AW4LUkqlk7m7G+BrxEDJVwPjxHam17nldxV80Ow==",
+      "path": "microsoft.net.test.sdk/17.4.1",
+      "hashPath": "microsoft.net.test.sdk.17.4.1.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
@@ -347,19 +399,26 @@
       "path": "microsoft.netcore.platforms/1.1.0",
       "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
     },
-    "Microsoft.TestPlatform.ObjectModel/17.4.0": {
+    "Microsoft.TestPlatform.ObjectModel/17.4.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-oWe7A0wrZhxagTOcaxJ9r0NXTbgkiBQQuCpCXxnP06NsGV/qOoaY2oaangAJbOUrwEx0eka1do400NwNCjfytw==",
-      "path": "microsoft.testplatform.objectmodel/17.4.0",
-      "hashPath": "microsoft.testplatform.objectmodel.17.4.0.nupkg.sha512"
+      "sha512": "sha512-v2CwoejusooZa/DZYt7UXo+CJOvwAmqg6ZyFJeIBu+DCRDqpEtf7WYhZ/AWii0EKzANPPLU9+m148aipYQkTuA==",
+      "path": "microsoft.testplatform.objectmodel/17.4.1",
+      "hashPath": "microsoft.testplatform.objectmodel.17.4.1.nupkg.sha512"
     },
-    "Microsoft.TestPlatform.TestHost/17.4.0": {
+    "Microsoft.TestPlatform.TestHost/17.4.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-sUx48fu9wgQF1JxzXeSVtzb7KoKpJrdtIzsFamxET3ZYOKXj+Ej13HWZ0U2nuMVZtZVHBmE+KS3Vv5cIdTlycQ==",
-      "path": "microsoft.testplatform.testhost/17.4.0",
-      "hashPath": "microsoft.testplatform.testhost.17.4.0.nupkg.sha512"
+      "sha512": "sha512-K7QXM4P4qrDKdPs/VSEKXR08QEru7daAK8vlIbhwENM3peXJwb9QgrAbtbYyyfVnX+F1m+1hntTH6aRX+h/f8g==",
+      "path": "microsoft.testplatform.testhost/17.4.1",
+      "hashPath": "microsoft.testplatform.testhost.17.4.1.nupkg.sha512"
+    },
+    "Moq/4.18.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IOo+W51+7Afnb0noltJrKxPBSfsgMzTKCw+Re5AMx8l/vBbAbMDOynLik4+lBYIWDJSO0uV7Zdqt7cNb6RZZ+A==",
+      "path": "moq/4.18.4",
+      "hashPath": "moq.4.18.4.nupkg.sha512"
     },
     "NETStandard.Library/2.0.0": {
       "type": "package",
@@ -389,12 +448,19 @@
       "path": "nunit/3.13.3",
       "hashPath": "nunit.3.13.3.nupkg.sha512"
     },
-    "NUnit3TestAdapter/4.3.0": {
+    "NUnit3TestAdapter/4.3.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-oXlDbkGW01VPPgI8P/XQ+PZHqaJoWtV90WuAkR0yN8HC3hiPivy2AaBZP3lqOql4RFqdxvF5qYSuaeWI+7/wGg==",
-      "path": "nunit3testadapter/4.3.0",
-      "hashPath": "nunit3testadapter.4.3.0.nupkg.sha512"
+      "sha512": "sha512-R+bGFtsUpLWywjT1nb3xMmoVa2AIw6ClIGC+XjW9lYE8hwJeos+NdR/mtg4RXbBphmC9epALrnUc6MM7mUG8+Q==",
+      "path": "nunit3testadapter/4.3.1",
+      "hashPath": "nunit3testadapter.4.3.1.nupkg.sha512"
+    },
+    "System.Diagnostics.EventLog/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lcyUiXTsETK2ALsZrX+nWuHSIQeazhqPphLfaRxzdGaG93+0kELqpgEHtwWOlQe7+jSFnKwaCAgL4kjeZCQJnw==",
+      "path": "system.diagnostics.eventlog/6.0.0",
+      "hashPath": "system.diagnostics.eventlog.6.0.0.nupkg.sha512"
     },
     "System.Reflection.Metadata/1.6.0": {
       "type": "package",
